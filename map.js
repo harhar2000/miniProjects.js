@@ -16,6 +16,7 @@ console.log(squaredNumbers);
 
 // Convert strings in array to uppercase
 const words = ["hello", "world", "javascript"];
+
 const uppercaseWords = words.map((word) => word.toUpperCase());
 console.log(uppercaseWords);
 
@@ -40,4 +41,19 @@ const discountedProducts = products.map((product) => ({
   name: product.name,
   price: product.price * 0.9,
 }));
+
 console.log(discountedProducts);
+
+// Write a function taking an array of numbers and returning a new array where each number is doubled
+
+function doubleNumber(numbers) {
+  return numbers.map((num) => num * 2);
+}
+console.log(doubleNumber([1, 2, 3, 4]));
+
+// Write a function taking an array of strings and returning a new array with '!' added to end of each string
+
+function addExclamation(strArray) {
+  return strArray.map((word) => word + "!");
+}
+console.log(addExclamation(["hello", "world"]));
