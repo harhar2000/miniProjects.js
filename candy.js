@@ -18,7 +18,15 @@ console.log(candy.getName());
 console.log(candy.getPrice());
 
 class ShoppingBasket {
-  constructor() {
-    this.items = [];
+  constructor(candy) {
+    this.candy = [];
+  }
+
+  addItem() {
+    return this.candy.append(item);
+  }
+
+  getTotalPrice() {
+    return this.candy.map((item) => item.price).reduce(sum, item);
   }
 }
