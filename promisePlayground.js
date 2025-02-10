@@ -1,43 +1,56 @@
-// Change the second promise in the chain to return the first sheep in thea rray alongside a fresh promise
-// Amend the next promise in the chain so that the names of the values available reflect the data at hand
+// // Change the second promise in the chain to return the first sheep in thea rray alongside a fresh promise
+// // Amend the next promise in the chain so that the names of the values available reflect the data at hand
 
-const promiseToCountSheep = new Promise((resolve, reject) => {
-  const fulfilled = true;
-  const sheep = ["Bramble", "Daffodil", "Buttercup"];
+// const promiseToCountSheep = new Promise((resolve, reject) => {
+//   const fulfilled = true;
+//   const sheep = ["Bramble", "Daffodil", "Buttercup"];
 
-  if (fulfilled) {
-    resolve(sheep);
-  } else {
-    reject("Did not find any sheep!");
-  }
-})
-  .then((sheepData) => {
-    return sheepData[0];
-  })
-  .then((sheepName) => {
-    console.log(sheepName);
-  })
-  .catch((errorStr) => {
-    console.log(errorStr);
-  });
+//   if (fulfilled) {
+//     resolve(sheep);
+//   } else {
+//     reject("Did not find any sheep!");
+//   }
+// })
+//   .then((sheepData) => {
+//     return sheepData[0];
+//   })
+//   .then((sheepName) => {
+//     console.log(sheepName);
+//   })
+//   .catch((errorStr) => {
+//     console.log(errorStr);
+//   });
 
-// Write some code to get the second promise in the chain to return a new promise that
-//  resolves with the length of the fruit string instead of simply logging the fruit string.
-//  Then get this third promise to log the fruit string length to the terminal
+// // Edit the second promise in the chain to return the length of the fruit string instead of simply logging the fruit string.
+// //  Then create a third promise to log the fruit string length to the terminal
+
+// const promiseToGatherFruit = new Promise((resolve, reject) => {
+//   const fruit = "Pineapple";
+//   resolve(fruit);
+// })
+//   .then((fruit) => {
+//     return fruit.length;
+//   })
+//   .then((numFruitLetters) => {
+//     console.log(numFruitLetters);
+//   });
+
 //  Predict the output of console.log(fruitsArray). Write sentences to explain your logic.
 
-const promiseToGatherFruit = new Promise((resolve, reject) => {
-  const fruit = "Pineapple";
+// const fruitsArray = [];
 
-  resolve(fruit);
-}).then((fruit) => {
-  console.log(fruit);
-});
-console.log(fruitsArray);
+// const promiseToGatherFruit2 = new Promise((resolve, reject) => {
+//   const fruit = "Pineapple";
+//   resolve(fruit);
+// }).then((fruit) => {
+//   fruitsArray.push(fruit);
+// });
 
-// Why is the output on the console in the wrong order?
-// Why does step 4 currently happen before step 3
-// Fix the code so step 3 and 4 are in the right order
+// console.log(fruitsArray);
+
+// // Why is the output on the console in the wrong order?
+// // Why does step 4 currently happen before step 3
+// // Fix the code so step 3 and 4 are in the right order
 
 const chopApples = () => {
   console.log("step 1 - chop apples and put them in a dish");
@@ -62,6 +75,9 @@ const bakeCrumble = () => {
     .then((bakedCrumble) => {
       console.log(bakedCrumble);
     })
+    .then(() => {
+      enjoyCrumble();
+    })
     .catch((burntCrumbleErr) => {
       console.log(burntCrumbleErr);
     });
@@ -79,10 +95,3 @@ const makeCrumble = () => {
 };
 
 makeCrumble();
-
-// ---------------------
-// CURRENT OUTPUT:
-// step 1 - chop apples and put them in a dish
-// step 2 - mix butter, sugar and flour until crumbly, spread over the apples
-// step 4 - Delicious crumble - even better with custard!
-// step 3 - Perfect golden crumble!
