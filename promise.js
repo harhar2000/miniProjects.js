@@ -15,6 +15,28 @@
 //  Pending - the Promise has yet to to be either rejected or fulfilled:
 //            the lapse between sending a request and getting an answer back from your server.
 
+// .then() Handles fulfilled promises (success)
+// .catch() Handles rejected promises (errors)
+
+// Both methods are used to handle the outcome of a promise
+// Each takes a callback function that runs after the promise completes:
+//  then(callback): Runs when 'resolve' is called
+//  catch(callback): Runs when 'reject' is called
+
+// .then() and .catch() returns a new Promise
+
+// Fulfilled Promise
+
 const promise = new Promise((resolve, reject) => {
-  pass;
+  resolve("Success!");
+}).then((result) => {
+  console.log(result);
+});
+
+// Rejected Promise
+
+const promise2 = new Promise((resolve, reject) => {
+  reject("Somethign went wrong");
+}).catch((error) => {
+  console.error(error);
 });
