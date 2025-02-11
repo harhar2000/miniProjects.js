@@ -54,10 +54,6 @@ class Thermostat {
   }
 
   energyUsage() {
-    // If temp below 18 - return Low Usage,
-    // elif temp between 18-25 - return Medium-Usage,
-    // else temp above 25 - return High-Usage
-
     if (this.temperature < 18) {
       return "low-usage";
     } else if (this.temperature <= 25) {
